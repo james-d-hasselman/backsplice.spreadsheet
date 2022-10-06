@@ -5,6 +5,11 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hasselman.Backsplice.Spreadsheet", "Hasselman.Backsplice.Spreadsheet\Hasselman.Backsplice.Spreadsheet.csproj", "{4B88E8A1-B13E-4D92-9AB9-2F3CF85E2767}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3CBEAE52-DA4F-4646-8B67-B29B35C3F5B4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
