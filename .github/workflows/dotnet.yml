@@ -23,7 +23,7 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build $PROJECT
+    - name: "Build $PROJECT"
       run: dotnet build --no-restore
 
   publish-gpr:
@@ -37,7 +37,7 @@ jobs:
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '3.1.x'
-          source-url: https://nuget.pkg.github.com/$OWNER/index.json
+          source-url: "https://nuget.pkg.github.com/$OWNER/index.json"
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Create the package
