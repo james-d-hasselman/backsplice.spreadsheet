@@ -6,10 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
     
-env:
-  PROJECT: Hasselman.Backsplice.Spreadsheet
-  OWNER: james-d-hasselman
-
 jobs:
   build:
 
@@ -23,7 +19,7 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: "Build $PROJECT"
+    - name: "Build Hasselman.Backsplice.Spreadsheet"
       run: dotnet build --no-restore
 
   publish-gpr:
@@ -37,10 +33,10 @@ jobs:
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '3.1.x'
-          source-url: "https://nuget.pkg.github.com/$OWNER/index.json"
+          source-url: "https://nuget.pkg.github.com/james-d-hasselman/index.json"
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Create the package
-        run: dotnet pack --configuration Release $PROJECT
+        run: dotnet pack --configuration Release Hasselman.Backsplice.Spreadsheet
       - name: Publish the package to GPR
-        run: dotnet nuget push $PROJECT/bin/Release/*.nupkg
+        run: dotnet nuget push Hasselman.Backsplice.Spreadsheet/bin/Release/*.nupkg
