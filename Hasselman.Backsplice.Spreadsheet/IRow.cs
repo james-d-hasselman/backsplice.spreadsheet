@@ -5,7 +5,7 @@ namespace Hasselman.Backsplice.Spreadsheet
 {
     public interface IRow
     {
-        double Height { get; set; }
+        double? Height { get; set; }
         public IList<ICell> Cells { get; set; }
     }
 }
