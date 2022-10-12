@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,6 +8,11 @@
     <PackageProjectUrl>https://github.com/james-d-hasselman/backsplice-spreadsheet-interface</PackageProjectUrl>
     <RepositoryUrl>https://github.com/james-d-hasselman/backsplice-spreadsheet-interface</RepositoryUrl>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <Version>$(VersionPrefix)</Version>
+    <VersionSuffix>alpha</VersionSuffix>
+    <InformationalVersion>Prerelease development package.</InformationalVersion>
+    <Authors>James D. Hasselman</Authors>
+    <AssemblyVersion></AssemblyVersion>
   </PropertyGroup>
 
 </Project>
