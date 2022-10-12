@@ -3,8 +3,14 @@
 
 namespace Hasselman.Backsplice.Spreadsheet
 {
-    public interface ISpreadsheetDocument
+    public enum SpreadsheetDocumentMode
     {
+        ReadOnly,
+        ReadWrite
+    }
+    public interface ISpreadsheetDocument
+   {
+        public void Open(string filePath, SpreadsheetDocumentMode mode);
         public void Save();
         public void SaveAs(string path);
         public void Close();
