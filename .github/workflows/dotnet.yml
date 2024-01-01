@@ -2,9 +2,9 @@ name: Publish interface package
 
 on:
   push:
-    branches: [ "restructure-project" ]
+    branches: [ "microsoft-project-structure" ]
   pull_request:
-    branches: [ "restructure-project" ]
+    branches: [ "microsoft-project-structure" ]
     
 jobs:
   build:
