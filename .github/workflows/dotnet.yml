@@ -44,4 +44,4 @@ jobs:
         run: dotnet pack --configuration Release
 
       - name: Publish the package to GitHub Packages registry
-        run: dotnet nuget push bin/Release/*.nupkg -k ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push src/Backsplice.Spreadsheet/bin/Release/*.nupkg -k ${{ secrets.GITHUB_TOKEN }}
