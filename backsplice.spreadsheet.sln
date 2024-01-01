@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "backsplice.spreadsheet", "backsplice.spreadsheet.csproj", "{15D1680B-958C-4DB0-B9E8-001251ADDC39}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ACE162D8-3BF4-4EBF-B5C2-89D637F69476}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backsplice.Spreadsheet", "src\Backsplice.Spreadsheet\Backsplice.Spreadsheet.csproj", "{F11AF21D-5FE8-499C-9918-E8D301E6DB2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{15D1680B-958C-4DB0-B9E8-001251ADDC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15D1680B-958C-4DB0-B9E8-001251ADDC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15D1680B-958C-4DB0-B9E8-001251ADDC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15D1680B-958C-4DB0-B9E8-001251ADDC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11AF21D-5FE8-499C-9918-E8D301E6DB2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11AF21D-5FE8-499C-9918-E8D301E6DB2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11AF21D-5FE8-499C-9918-E8D301E6DB2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11AF21D-5FE8-499C-9918-E8D301E6DB2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F11AF21D-5FE8-499C-9918-E8D301E6DB2F} = {ACE162D8-3BF4-4EBF-B5C2-89D637F69476}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A5808A8E-510D-47AE-99D2-2CBB4D5AC956}
+		SolutionGuid = {17F68A06-A586-43FB-87F7-C4EA0799B47F}
 	EndGlobalSection
 EndGlobal
