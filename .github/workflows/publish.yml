@@ -5,8 +5,11 @@ on:
     types: [published]
     
 jobs:
-  setup-dotnet:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
     steps:
       - name: Setup .Net
         uses: actions/setup-dotnet@v3
@@ -15,32 +18,16 @@ jobs:
           source-url: https://nuget.pkg.github.com/james-d-hasselman/index.json
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
- 
-  build:
-    needs: setup-dotnet
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/checkout@v3
       - name: Restore dependencies
         run: dotnet restore
       - name: "Build backsplice.spreadsheet"
         run: dotnet build --configuration Release --no-restore
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
       - name: Where are we?
         run: pwd
-
       - name: Why does it say there's no solution file here?
         run: ls -l
-
       - name: Create the package
         run: dotnet pack --configuration Release --no-build --no-restore /p:VersionPrefix=${{ github.event.release.tag_name }}
-
       - name: Publish the package to GitHub Packages registry
         run: dotnet nuget push src/Backsplice.Spreadsheet/bin/Release/*.nupkg -k ${{ secrets.GITHUB_TOKEN }}
