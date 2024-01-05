@@ -38,6 +38,9 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Restore packages
+        run: dotnet restore
+
       - name: Create the package
         run: dotnet pack --configuration Release --no-build /p:VersionPrefix=${{ github.event.release.tag_name }}
 
