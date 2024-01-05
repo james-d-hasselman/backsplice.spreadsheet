@@ -5,11 +5,22 @@ on:
     types: [published]
     
 jobs:
-  build:
-
+  setup-dotnet:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Setup .Net
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+          source-url: https://nuget.pkg.github.com/james-d-hasselman/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ 
+  build:
+    needs: setup-dotnet
+    runs-on: ubuntu-latest
+    steps:
+<<<<<<< Updated upstream
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -20,6 +31,13 @@ jobs:
 
     - name: "Build backsplice.spreadsheet"
       run: dotnet build --configuration Release --no-restore /p:VersionPrefix=${{ github.event.release.tag_name }}
+=======
+      - uses: actions/checkout@v3
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: "Build backsplice.spreadsheet"
+        run: dotnet build --no-restore
+>>>>>>> Stashed changes
 
   publish-gpr:
     needs: build
@@ -28,6 +46,7 @@ jobs:
       packages: write
       contents: read
     steps:
+<<<<<<< Updated upstream
       - name: Setup .NET 7.0.x 
         uses: actions/setup-dotnet@v3
         with:
@@ -36,6 +55,8 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+=======
+>>>>>>> Stashed changes
       - name: Create the package
         run: dotnet pack --configuration Release --no-build --no-restore /p:VersionPrefix=${{ github.event.release.tag_name }}
 
