@@ -18,7 +18,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: "Build backsplice.spreadsheet"
-      run: dotnet build --no-restore /p:VersionPrefix=${{ github.event.release.tag_name }}
+      run: dotnet build --configuration Release --no-restore /p:VersionPrefix=${{ github.event.release.tag_name }}
 
   publish-gpr:
     needs: build
