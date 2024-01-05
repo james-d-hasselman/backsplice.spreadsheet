@@ -23,10 +23,6 @@ jobs:
         run: dotnet restore
       - name: "Build backsplice.spreadsheet"
         run: dotnet build --configuration Release --no-restore
-      - name: Where are we?
-        run: pwd
-      - name: Why does it say there's no solution file here?
-        run: ls -l
       - name: Create the package
         run: dotnet pack --configuration Release --no-build --no-restore /p:VersionPrefix=${{ github.event.release.tag_name }}
       - name: Publish the package to GitHub Packages registry
